@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 10%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.menu_icons {
+    width: 35px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 100px;
+    margin-left: -10%;
+}
+
+button img {
+    width: 20px;
+    margin-left: 10px;
+}
+.menu {
+    display: flex;
+    align-items: center;
+}
+.menu ul { /* liste ordonnée pour le menu*/
+    margin-left: 25px; /* marge a gauche de 25px*/
+    display: flex; 
+    list-style: none; /* enlever soulignement */
+}
+.menu ul a{
+    margin-left: 10px;
+    text-transform: capitalize; 
+    font-size: 13px;
+    color: #000; /*Couleur du texte*/
+    text-decoration: 0;
+    position: relative;
+}
+.menu ul a::after{ /*détails du hover*/
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: #f7a800;
+    transition: 0.1s ease-out;
+}
+.menu ul a:hover::after{ /*Quand on passe sur les catégories du menu*/
+    width: 100%; 
+}
+.header-end {
+    display: flex;
+    align-items: center;
+}
+.header-end i{
+    margin-right: 20px;
+}
+button { /*Bouton à a droite click & collect*/
+    cursor: pointer; /*le pointeur qui change quand on passe sur le bouton*/
+    display: flex;
+    align-items: center;
+    border: 0;
+    padding: 8px 15px; /*décaler le bouton*/
+    background-color: #bb2337; /*arrière plan du bouton*/
+    color: #fff;
+    text-transform: uppercase; /*EN MAJ*/
+    border-radius: 50px; /*arrondi du bouton*/
+    z-index: 1;
+    transition: 0.2s ease-out; /*transition quand le bouton s'affiche*/
+}
+button span {
+    font-family: 'Anton', sans-serif; /*Changer font du texte*/ 
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+}
+button:hover {
+    transform: scale(1.06); /*faire grossir bouton au passage de la souris*/
+}
+.fa-crown { /*Déplacer l'encadré login*/
+    position: relative;
+    padding: 20px;
+}
+.login{ /*Mettre les boutons les un sous les autres*/
+    position: absolute;
+    right: -22px;
+    top: 60px;
+    width: 270px;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2); /*faire encadré*/
+    border-radius: 6px;
+}
+.login button{ /*changer les boutons du login*/
+    width: 100%;
+    background-color: #f7a800 ; 
+}
+hr { /*faire barre d'espace entre les deux possibilités de se connecter */
+    border: 0;
+    margin: 30px 0;
+    background-color: #999;
+    width: 100% ;
+    height: 1px;
+}
+.login p { /*texte de la section login*/
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.login button:last-child { /*le bouton rejoignez le kingdom*/
+    background-color: transparent;
+    color: #f7a800;
+    border: 1px solid #f7a800;
+}
+
+.login::after { /*représente le petit triangle au dessus de la connexion*/
+    position: absolute;
+    right: 40px;
+    top: -8px;
+    content: "";
+    height: 25px;
+    width: 25px;
+    z-index: -3;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    transform: rotate(50deg);
+}
+
+.login::before { /*représente le petit triangle au dessus de la connexion*/
+    position: absolute;
+    right: 40px;
+    top: -8px;
+    content: "";
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+
+    transform: rotate(50deg);
+}
+.fa-crown:hover .login { /*pour faire apparaitre ou non la connexion quand on passe sur le logo couronne*/
+    display: block;
+}
+
+/*HOME*/
+.home { /*Bouton découvrez le*/
+    margin-top: 80px; /*marge de 80px au dessus*/
+    background: url('images/img1.webp') ; /*arriere plan derriere bouton*/
+    background-position: center; /*centrer l'image au dessus au milieu de son espace*/
+    background-size: cover; /*remplie son espace en s'ajustant aux dimensions*/
+    width: 100%; /*prend toute la largeur accordé*/
+    height: calc(100vh - 200px); /*faire des calculs pour la taille autorisé*/
+    display: flex;
+    align-items: flex-end; /*mettre le bouton en bas de la section home*/
+    justify-content: center; /*mettre au milieu de la page*/
+    padding: 20px; /*remonte l'élément de 20px et laisse une marge en dessous*/
+}
+
+/*FOODS*/
+.foods {
+    margin: 50px 0; /*créer un espace entre le home et le food*/
+    padding: 0 10%;  /*Décaler les images sur la droite*/
+}
+h1 { /*Texte chaud bouillant*/
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Anton' , sans-serif;
+}
+.foods p {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+.foods-list { /*Les trois images de desserts*/
+    display: flex; /*Pour mettre les images les unes a coté des autres*/
+    justify-content: space-between; /*créer un espace entre chaque photo*/
+}
+.foods-list img { /*Changer aspect des photos*/
+    box-shadow: 0 0 9px rgba(0,0,0,0.1);
+    width: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+h3 { /*Texte en dessous des images*/
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.foods-list .box{
+    transition: 0.5s ease-out;
+    cursor: pointer; /*mettre la souris en mode poiteur des passages*/
+}
+.foods-list .box:hover {
+    transform: scale(1.05); /*faire grossir image au passage de la souris*/
+}
+
+/*FIDELITY PROG*/
+.fidelity_prog { /*TAILLE DONNER A LA SECTION*/
+    margin: 35px 0;
+    height: 350px;
+    width: 100%;
+    background: url(images/img8.png);
+    background-position: center;
+    background-size: cover;
+    padding: 20px 10%;
+    display: flex; /*Mettre les éléments a coté les un des autres*/
+    justify-content: space-between; /*espace entre les div*/
+    align-items: center;
+    overflow: hidden; /*Ne pas afficher les éléments qui dépasses*/
+}
+.fidelity_prog div{ /*Détails pour aligner les div dans la section*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.fidelity_prog button {  /*Bouton des différentes div du prog de fidélité*/
+    margin-top: 25px; /*esapce entre images et boutons*/
+    background-color: #f7a800;
+}
+.fidelity_prog .div1 {
+    width: 300px;
+}
+.fidelity_prog .div2 {
+    width: 350px;
+    margin-top: 25px;
+}
+.fidelity_prog .div3 {
+    width: 410px;
+}
+.fidelity_prog img {
+    width: 100%;
+}
+
+/*LITTLE FOOD*/
+.little-food{ /*Marge de 10 décaller de gauche*/
+    padding: 0 10%;
+}
+.little-food img{ 
+    width: 220px; /*Taille des images*/
+}
+.little-food_box{
+    margin: 50px 0;
+    display: flex; /*Mettre images et texte les un a cotés des autres*/
+    align-items: center;
+    justify-content: space-between; /*espaces entre les éléments*/
+    height: 280px; /*Hauteur des box*/
+}
+.little-food_box .box{
+    background-color: #fbf5ee; /*arrière plan des images*/
+    box-shadow: 0 0 8px rgba(0,0,0,0.1); /*ombre autour des arrières plans pour contrast*/
+    border-radius: 18px; /*arrondi des box*/
+    padding: 20px;
+    transition: 0.25s; /*animations d'affichage lors de l'apparition de la page */
+    height: 100%;
+}
+.little-food_box .box:hover { /*passage de la souris sur les éléments*/
+    transform: scale(0.9); /*faire retrécir les images au passage de la souris*/
+}
+
+/*FOOTER*/
+footer { 
+    background-color: #000; /*arrière plan*/
+    color: #fff; /*couleur texte*/
+    margin-top: 20px;
+    padding: 25px 10%; /*Décaler les éléments du footer*/
+}
+footer p { /*paragraphe du footer*/
+    font-size: 15px; /*taille texte*/
+}
+.icones_social {
+    margin: 20px 0;
+}
+.icones_social i {
+    margin-right: 20px;
+    font-size: 20px;
+}
+footer img { /*app store et google play*/
+    margin-top: 20px;
+    border: 1px solid #fff;
+    height: 50px; /*hauteur de 50px*/
+    cursor: pointer;
+}
+
+footer img:last-child { /*Dernier éléments du footer*/
+    margin-left: 10px; /*espace de 10px entre le dernier et l'avant dernier donc entre app store et google play*/
+}
+
+footer .div2 { /*égale à tous les catégories produit,famille ect du footer*/
+    display: flex; /*un à coté des autres*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .div2 h3 { /*chaque titre espace en dessous avec les liens cliquables*/
+    margin-bottom: 10px; 
+}
+
+footer .div2 ul { /*liste à puce du footer*/
+    display: flex;
+    flex-direction: column; /*les unes en dessous des autres*/
+}
+footer .div2 ul a { /*le texte de la liste à puce*/
+    font-size: 13px;
+    color: #fff;
+    text-decoration: 0; /*Enleve les soulignements des listes à puces*/
+    margin-bottom: 5px; 
+    transition: 0.5s; /*animation d'affichage à l'apparition de la page*/
+}
+footer .div2 ul a:hover {
+    letter-spacing: 0.5px; /*faire grossir le texte lors du passage de la souris*/
+}
+footer .div3 {
+    text-align: center;
+}
+footer .div3 p:first-child { /*le premier paragraphe de la div3*/
+    font-size: 13px;
+}
+footer .div3 p:last-child { /*le deuxième paragraphe de la div3*/
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
